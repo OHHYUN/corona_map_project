@@ -6,7 +6,7 @@ metadata:
     kubernetes.io/ingress.class: alb
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/subnets: subnet-09d43a7bf3a1a3d9c, subnet-08f7c8ec1d3c6c3cf
+    alb.ingress.kubernetes.io/subnets: subnet-04b5eb113400ab20e, subnet-09160367d715c0cc9
 spec:
   defaultBackend:
     service:

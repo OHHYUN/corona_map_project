@@ -1,0 +1,36 @@
+{{>layout/header}}
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=1cf217ec8aafecab4e76cda6322c91b7"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<style>
+    .navi{margin: 50px 0 0 35px;}
+    .title{margin: 0 0 0 35px;}
+    .area{position:relative;width:100%;height:100%;margin:0;padding:0;}
+    #map{float:left;width:40%;height:40%;margin:50px 0 0 50px;padding:0;}
+    .chartArea{float:right;width:60%;height:100%;margin:50px 0 0 0;padding:0;}
+    #localname{height:9%;}
+    #chart{height:90%;}
+    .canvas{width:100%;height:100%;}
+    rect.bar{background-color:#2f4c85;}
+</style>
+<div class="navi">
+    <a href="">코로나 지도</a>
+    <a href="">게시판</a>
+</div>
+<div class="title">시·도별 코로나 확진자 현황(최신 15일)</div>
+<div class="area">
+    <div id="map" style="width:500px;height:400px;"></div>
+    <div class="chartArea">
+        <span id="localname"></span>
+        <div id="chart"><svg class="canvas"></svg></div>
+    </div>
+</div>
+
+<!--<script type="text/javascript" src="/js/app/map.js"></script>-->
+<!--<script type="text/javascript" src="/js/app/chart.js"></script>-->
+
+<script>
+
+    // getData();
+
+</script>
+{{>layout/footer}}

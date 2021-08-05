@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: map
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: map
+  template:
+    metadata:
+      labels:
+        run: map
+    spec:
+      containers:
+        - image: 783845918471.dkr.ecr.ap-northeast-2.amazonaws.com/map:0.1
+          name: map
+          ports:
+            - containerPort: 8080
+      nodeSelector:
+        key: private1

@@ -1,0 +1,36 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-board
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTP": 80}]'
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/subnets: subnet-09d43a7bf3a1a3d9c, subnet-08f7c8ec1d3c6c3cf
+spec:
+  defaultBackend:
+    service:
+      name: board
+      port:
+        number: 80
+  rules:
+    - host:
+      http:
+        paths:
+          - path: /board
+            pathType: Prefix
+            backend:
+              service:
+                name: board
+                port:
+                  number: 80
+    - host:
+      http:
+        paths:
+          - path: /map
+            pathType: Prefix
+            backend:
+              service:
+                name: map
+                port:
+                  number: 80
